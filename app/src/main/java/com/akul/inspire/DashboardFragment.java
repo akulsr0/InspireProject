@@ -1,6 +1,7 @@
 package com.akul.inspire;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +14,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -32,6 +36,7 @@ public class DashboardFragment extends Fragment
     String uid;
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,23 +47,15 @@ public class DashboardFragment extends Fragment
         postq = view.findViewById(R.id.postQuote);
 
 
-
-
-
-
-
-
-
-
-
         postq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
                 mAuth = FirebaseAuth.getInstance();
                 uid = mAuth.getCurrentUser().getUid();
+
                 mDatabase = FirebaseDatabase.getInstance();
-                mRef = mDatabase.getReference("Quotes/"+uid+"/");
+                mRef = mDatabase.getReference("Quotes/");
 
 
                 final String quote = getq.getText().toString();
@@ -77,14 +74,15 @@ public class DashboardFragment extends Fragment
                     return;
                 }
 
-
-
                 HashMap <String,String> datamap = new HashMap<String, String>();
                 datamap.put("Category",qc);
                 datamap.put("Quote",quote);
 
 
                 mRef.push().setValue(datamap);
+
+
+
 
                 Toast.makeText(getContext(),"Post Published",Toast.LENGTH_SHORT).show();
             }
