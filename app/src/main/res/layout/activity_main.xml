@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/bg"
+    >
+
+    <RelativeLayout
+        android:id="@+id/linearLay1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="inspire"
+            android:fontFamily="@font/montserratregular"
+            android:textSize="50dp"
+            android:layout_marginTop="100dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linearLay1"
+        >
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/getstartedbtn"
+            android:layout_centerInParent="true"
+            android:onClick="continueClicked"
+            />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btnlogin"
+            android:layout_centerInParent="true"
+            android:onClick="loginClicked"
+            />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btnregister"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/btn_login"
+            android:layout_marginTop="5dp"
+            android:onClick="registerClicked"
+            />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardFragment">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/titleDash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dashboardtext"
+            android:layout_marginLeft="20dp"
+            />
+
+        <EditText
+            android:id="@+id/getQuote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittextdashborad"
+            android:inputType="textMultiLine"
+            android:scrollHorizontally="false"
+            android:padding="12dp"
+            android:lines="5"
+            android:gravity="top|left"
+            android:fontFamily="@font/montserratregular"
+            android:layout_below="@id/titleDash"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            />
+
+        <Spinner
+            android:id="@+id/postCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinnerposttype"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/getQuote"
+            android:layout_marginTop="10dp"
+            android:entries="@array/categoriesofpost"
+            android:paddingLeft="10dp"
+            >
+
+        </Spinner>
+
+        <Button
+            android:id="@+id/postQuote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btnpost"
+            android:layout_below="@id/postCategory"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            />
+
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

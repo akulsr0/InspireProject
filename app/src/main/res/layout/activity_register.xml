@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="@drawable/bg"
+    >
+
+
+
+    <ImageView
+        android:id="@+id/titlereg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/titleregnow"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        />
+
+    <EditText
+        android:id="@+id/getFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:layout_below="@id/titlereg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:inputType="textEmailAddress"
+        android:hint="  Full Name"
+        android:paddingLeft="10dp"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="#fff"
+        android:textSize="16dp"
+        android:drawableLeft="@drawable/face"
+        />
+
+    <EditText
+        android:id="@+id/getEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:layout_below="@id/getFullName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:inputType="textEmailAddress"
+        android:hint="  Email"
+        android:paddingLeft="10dp"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="#fff"
+        android:textSize="16dp"
+        android:drawableLeft="@drawable/user"
+        />
+
+    <EditText
+        android:id="@+id/getUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:layout_below="@id/getEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:inputType="textEmailAddress"
+        android:hint="  Username"
+        android:paddingLeft="10dp"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="#fff"
+        android:textSize="16dp"
+        android:drawableLeft="@drawable/person"
+        />
+
+    <EditText
+        android:id="@+id/getPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:layout_below="@id/getUsername"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="  Phone Number"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="#fff"
+        android:textSize="16dp"
+        android:drawableLeft="@drawable/phone"
+        android:paddingLeft="10dp"
+        android:inputType="phone"
+        />
+
+    <EditText
+        android:id="@+id/getPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:layout_below="@id/getPhone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:hint="  Password"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="#fff"
+        android:textSize="16dp"
+        android:drawableLeft="@drawable/pass"
+        />
+
+    <Button
+        android:id="@+id/loginNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btnregisterwhite"
+        android:layout_below="@id/getPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="registerUser"
+        />
+
+    <ProgressBar
+        android:id="@+id/pBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+
+
+</RelativeLayout>
+
+
+
+</ScrollView>

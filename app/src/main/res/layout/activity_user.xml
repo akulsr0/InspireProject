@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity"
+    android:background="@drawable/bguseract"
+    >
+
+    <FrameLayout
+        android:id="@+id/userframe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/relLay1"
+        >
+
+    </FrameLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/relLay1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#fff"
+            >
+
+            <ImageView
+                android:id="@+id/btn_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/menuicon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                />
+
+            <ImageView
+                android:id="@+id/btn_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homeicon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:layout_alignLeft="@id/btn_menu"
+                android:onClick="fragclick"
+                />
+
+            <ImageView
+                android:id="@+id/btn_quote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/quoteicon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:layout_alignLeft="@id/btn_home"
+                android:onClick="fragclick"
+                />
+
+            <ImageView
+                android:id="@+id/btn_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/usericon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="56dp"
+                android:layout_alignLeft="@id/btn_quote"
+                android:onClick="fragclick"
+                />
+
+
+
+        </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Inspire!</string>
+
+    <string-array name="categoriesofpost">
+        <item>Choose category</item>
+        <item>Art</item>
+        <item>Education</item>
+        <item>Evil</item>
+        <item>Failure</item>
+        <item>Faith</item>
+        <item>Friendship</item>
+        <item>Happiness</item>
+        <item>Humanity</item>
+        <item>Humour</item>
+        <item>Knowledge</item>
+        <item>Leadership</item>
+        <item>Life</item>
+        <item>Love</item>
+        <item>Motivation</item>
+        <item>Peace</item>
+        <item>Success</item>
+        <item>Truth</item>
+        <item>War</item>
+        <item>Wisdom</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
