@@ -101,8 +101,7 @@ public class UserActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-        if (firebaseAuth.getCurrentUser() == null)
-        {
+        if (firebaseAuth.getCurrentUser() == null) {
             finish();
             startActivity(new Intent(this, MainActivity.class));
         }
