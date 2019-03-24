@@ -26,7 +26,7 @@ public class DashboardFragment extends Fragment
 {
 
     View view;
-    EditText getq;
+    EditText getq,getAuthor;
     Spinner qcategory;
     Button postq;
 
@@ -43,6 +43,7 @@ public class DashboardFragment extends Fragment
         view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         getq = view.findViewById(R.id.getQuote);
+        getAuthor = view.findViewById(R.id.getAuthor);
         qcategory = view.findViewById(R.id.postCategory);
         postq = view.findViewById(R.id.postQuote);
 
@@ -57,14 +58,21 @@ public class DashboardFragment extends Fragment
                 mDatabase = FirebaseDatabase.getInstance();
                 mRef = mDatabase.getReference("Quotes/");
 
-
                 final String quote = getq.getText().toString();
                 final String qc = qcategory.getSelectedItem().toString();
+                final String author = getAuthor.getText().toString();
 
                 if(quote.isEmpty())
                 {
                     getq.setError("Can't be empty, dude!");
                     getq.requestFocus();
+                    return;
+                }
+
+                if(author.isEmpty())
+                {
+                    getAuthor.setError("Enter author name");
+                    getAuthor.requestFocus();
                     return;
                 }
 
@@ -75,13 +83,12 @@ public class DashboardFragment extends Fragment
                 }
 
                 HashMap <String,String> datamap = new HashMap<String, String>();
-                datamap.put("Category",qc);
-                datamap.put("Quote",quote);
+                datamap.put("quote",quote);
+                datamap.put("qcategory",qc);
+                datamap.put("qauthor",author);
 
 
                 mRef.push().setValue(datamap);
-
-
 
 
                 Toast.makeText(getContext(),"Post Published",Toast.LENGTH_SHORT).show();
