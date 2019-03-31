@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,11 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+// Created by Akul Srivastava
+// Date: 21 March 2019
 
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.Continuation;
@@ -38,6 +43,9 @@ import java.util.HashMap;
 
 import static android.app.Activity.RESULT_OK;
 
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 public class ProfileFragment extends Fragment {
 
     View view,view1;
@@ -48,12 +56,16 @@ public class ProfileFragment extends Fragment {
     public EditText ufname, uemail, uphone, uname;
     Button btnsave;
     
-    ImageView editDP;
+    ImageView editDP, isVerify;
     FirebaseStorage firebaseStorage;
     StorageReference storageReference,aRef;
     Uri mDPuri;
     public static final int SELECTED=100;
 
+    TextView logout;
+
+    // Created by Akul Srivastava
+    // Date: 21 March 2019
 
 
 
@@ -73,7 +85,14 @@ public class ProfileFragment extends Fragment {
         storageReference = firebaseStorage.getReference("ProfileImages/");
         aRef = firebaseStorage.getReference("ProfileImage/"+uid+"/");
 
-
+        logout = view.findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getContext(),MainActivity.class));
+            }
+        });
 
         ufname = view.findViewById(R.id.getfullname);
         uemail = view.findViewById(R.id.getemail);
@@ -87,6 +106,17 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v)
             {
                 chooseImg();
+            }
+        });
+
+        isVerify = view.findViewById(R.id.verifyTick);
+        isVerify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Toast t = Toast.makeText(getContext(),"This means you are verified", Toast.LENGTH_SHORT);
+                t.setGravity(Gravity.CENTER,0,0);
+                t.show();
             }
         });
         
@@ -233,9 +263,13 @@ public class ProfileFragment extends Fragment {
         });
 
 
-
+        if(firebaseAuth.getCurrentUser().getUid().equals("MV7yPGTwTcRMV6d2wcjJjMJUL3h2"))
+        {
+            isVerify.setVisibility(View.VISIBLE);
+        }
 
     }
-
-
 }
+
+// Created by Akul Srivastava
+// Date: 21 March 2019

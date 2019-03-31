@@ -1,5 +1,8 @@
 package com.akul.inspire;
 
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 public class User
 {
 
@@ -17,3 +20,6 @@ public class User
         this.phonenumber = phonenumber;
     }
 }
+
+// Created by Akul Srivastava
+// Date: 21 March 2019

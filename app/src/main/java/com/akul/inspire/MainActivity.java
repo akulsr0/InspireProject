@@ -10,7 +10,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 import com.google.firebase.auth.FirebaseAuth;
+
+// Created by Akul Srivastava
+// Date: 21 March 2019
 
 public class MainActivity extends AppCompatActivity
 {
@@ -78,3 +84,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 }
+
+// Created by Akul Srivastava
+// Date: 21 March 2019

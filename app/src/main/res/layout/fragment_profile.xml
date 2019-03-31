@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Created by Akul Srivastava
+         Date: 21 March 2019 -->
+
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment">
 
     <ScrollView
@@ -25,22 +31,47 @@
                 android:layout_marginTop="10dp"
                 />
 
-            <ImageView
-                android:id="@+id/editdp"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:src="@drawable/editdp"
+            <RelativeLayout
+                android:id="@+id/dpLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/profileText"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                />
+                >
+
+                <ImageView
+                    android:id="@+id/verifyTick"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/verifytick"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="70dp"
+                    android:visibility="invisible"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/editdp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/editdp"
+                    android:layout_centerHorizontal="true"
+                    app:civ_border_width="8dp"
+                    app:civ_border_color="#2D77C9"
+                    />
+
+
+
+            </RelativeLayout>
+
+
 
             <LinearLayout
                 android:id="@+id/linName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_below="@id/editdp"
+                android:layout_below="@id/dpLay"
                 android:layout_marginTop="30dp"
                 >
 
@@ -185,7 +216,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/btn_save"
                 android:layout_marginTop="5dp"
-                android:onClick="logoutclick"
                 />
 
         </RelativeLayout>

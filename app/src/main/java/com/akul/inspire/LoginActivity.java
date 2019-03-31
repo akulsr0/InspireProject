@@ -10,10 +10,16 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+// Created by Akul Srivastava
+// Date: 21 March 2019
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -68,10 +74,6 @@ public class LoginActivity extends AppCompatActivity
                     }
                 });
 
-
-
-
-
     }
 
 
@@ -86,3 +88,6 @@ public class LoginActivity extends AppCompatActivity
     }
 
 }
+
+// Created by Akul Srivastava
+// Date: 21 March 2019

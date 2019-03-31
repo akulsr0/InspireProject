@@ -14,6 +14,10 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+
+// Created by Akul Srivastava
+// Date: 21 March 2019
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -22,19 +26,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 public class UserActivity extends AppCompatActivity
 {
 
     ActionBar mBar;
-    Animation fbtnopen, fbtnclose, rc, ranc;
-    Boolean isOpen = false;
     FirebaseAuth firebaseAuth;
     FirebaseDatabase mDatabase;
     DatabaseReference mRef;
     String uID;
 
     EditText userfname, useremail, userphone, useruname;
-    EditText PUTA;
+
+    RelativeLayout menuUser;
 
 
     @Override
@@ -44,6 +50,8 @@ public class UserActivity extends AppCompatActivity
         setContentView(R.layout.activity_user);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        menuUser = findViewById(R.id.menuUser);
 
         Fragment fr;
         fr = new HomeFragment();
@@ -118,15 +126,22 @@ public class UserActivity extends AppCompatActivity
 
     }
 
-    public void logoutclick(View view)
+
+
+
+    public void menuPressed(View view)
     {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(this,MainActivity.class));
+        if(menuUser.getVisibility() != View.VISIBLE)
+        {
+            menuUser.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            menuUser.setVisibility(View.INVISIBLE);
+        }
+
     }
-
-
-
 }
 
-
 // Created by Akul Srivastava
+// Date: 21 March 2019

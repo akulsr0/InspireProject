@@ -11,12 +11,18 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.FirebaseDatabase;
+
+// Created by Akul Srivastava
+// Date: 21 March 2019
 
 public class RegisterActivity extends AppCompatActivity
 {
@@ -47,6 +53,9 @@ public class RegisterActivity extends AppCompatActivity
 
 
     }
+
+    // Created by Akul Srivastava
+    // Date: 21 March 2019
 
     public void registerUser(View view)
     {
@@ -153,3 +162,6 @@ public class RegisterActivity extends AppCompatActivity
 
     }
 }
+
+// Created by Akul Srivastava
+// Date: 21 March 2019

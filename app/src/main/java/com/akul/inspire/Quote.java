@@ -1,5 +1,8 @@
 package com.akul.inspire;
 
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 public class Quote
 {
     public String quote, qcategory, qauthor;
@@ -42,3 +45,6 @@ public class Quote
         this.qcategory = qcategory;
     }
 }
+
+// Created by Akul Srivastava
+// Date: 21 March 2019

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Created by Akul Srivastava
+         Date: 21 March 2019 -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,6 +20,48 @@
 
     </FrameLayout>
 
+    <RelativeLayout
+        android:id="@+id/menuUser"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@id/relLay1"
+        android:background="@drawable/menubar1"
+        android:visibility="invisible"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            >
+
+            <TextView
+                android:id="@+id/sortCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="●  View By Category"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:fontFamily="@font/montserratlight"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_below="@id/sortCategory"
+                android:layout_margin="2dp"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:fontFamily="@font/montserratlight"
+                />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
 
     <RelativeLayout
             android:id="@+id/relLay1"
@@ -31,7 +77,9 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/menuicon"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp" />
+                android:layout_marginLeft="25dp"
+                android:onClick="menuPressed"
+                />
 
             <ImageView
                 android:id="@+id/btn_home"
@@ -39,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/homeicon"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="70dp"
                 android:layout_alignLeft="@id/btn_menu"
                 android:onClick="fragclick"
                 />
@@ -50,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/quoteicon"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="80dp"
                 android:layout_alignLeft="@id/btn_home"
                 android:onClick="fragclick"
                 />
@@ -61,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/usericon"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="56dp"
+                android:layout_marginLeft="76dp"
                 android:layout_alignLeft="@id/btn_quote"
                 android:onClick="fragclick"
                 />

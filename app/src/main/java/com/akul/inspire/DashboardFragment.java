@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+// Created by Akul Srivastava
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,6 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 
 public class DashboardFragment extends Fragment
 {
@@ -38,18 +44,16 @@ public class DashboardFragment extends Fragment
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
+
         view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         getq = view.findViewById(R.id.getQuote);
         getAuthor = view.findViewById(R.id.getAuthor);
 
-
-
         qcategory = view.findViewById(R.id.postCategory);
         postq = view.findViewById(R.id.postQuote);
-
-
         postq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -59,10 +63,6 @@ public class DashboardFragment extends Fragment
 
                 mDatabase = FirebaseDatabase.getInstance();
                 mRef = mDatabase.getReference("Quotes/");
-
-
-
-
 
                 final String quote = getq.getText().toString();
                 final String qc = qcategory.getSelectedItem().toString();
@@ -108,3 +108,6 @@ public class DashboardFragment extends Fragment
     }
 
 }
+
+// Created by Akul Srivastava
+// Date: 21 March 2019

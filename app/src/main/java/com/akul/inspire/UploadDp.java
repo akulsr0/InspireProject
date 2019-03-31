@@ -1,5 +1,8 @@
 package com.akul.inspire;
 
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 public class UploadDp
 {
     String imgUrl;
@@ -20,3 +23,6 @@ public class UploadDp
         this.imgUrl = imgUrl;
     }
 }
+
+// Created by Akul Srivastava
+// Date: 21 March 2019

@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+// Created by Akul Srivastava
+// Date: 21 March 2019
+
 import com.dingmouren.layoutmanagergroup.skidright.SkidRightLayoutManager;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,7 +25,11 @@ import com.google.firebase.database.ValueEventListener;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+// Created by Akul Srivastava
+// Date: 21 March 2019
 
 public class HomeFragment extends Fragment {
 
@@ -92,3 +99,6 @@ public class HomeFragment extends Fragment {
     }
 
 }
+
+// Created by Akul Srivastava
+// Date: 21 March 2019
