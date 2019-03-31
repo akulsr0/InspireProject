@@ -40,12 +40,12 @@ import static android.app.Activity.RESULT_OK;
 
 public class ProfileFragment extends Fragment {
 
-    View view;
+    View view,view1;
     FirebaseAuth firebaseAuth;
     FirebaseDatabase mDatabase;
     DatabaseReference mRef,iRef;
     String uid;
-    EditText ufname, uemail, uphone, uname;
+    public EditText ufname, uemail, uphone, uname;
     Button btnsave;
     
     ImageView editDP;
@@ -61,6 +61,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_profile, container, false);
+        view1 = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         firebaseAuth = FirebaseAuth.getInstance();
         uid = firebaseAuth.getCurrentUser().getUid();
@@ -71,6 +72,7 @@ public class ProfileFragment extends Fragment {
         firebaseStorage = FirebaseStorage.getInstance();
         storageReference = firebaseStorage.getReference("ProfileImages/");
         aRef = firebaseStorage.getReference("ProfileImage/"+uid+"/");
+
 
 
         ufname = view.findViewById(R.id.getfullname);

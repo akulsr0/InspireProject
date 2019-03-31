@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.dingmouren.layoutmanagergroup.skidright.SkidRightLayoutManager;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +32,9 @@ public class HomeFragment extends Fragment {
     QuoteAdapter adapter;
     List<Quote> quoteList;
 
+    private SkidRightLayoutManager mSkidRightLayoutManager;
+
+
 
     DatabaseReference mDatabase;
 
@@ -44,9 +48,12 @@ public class HomeFragment extends Fragment {
         mDatabase.keepSynced(true);
 
 
+        mSkidRightLayoutManager = new SkidRightLayoutManager(1.5f, 0.85f);
+
+
         postRecycler = view.findViewById(R.id.myRecycler);
         postRecycler.setHasFixedSize(true);
-        postRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        postRecycler.setLayoutManager(mSkidRightLayoutManager);
 
         quoteList = new ArrayList<>();
 
@@ -79,34 +86,9 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onStart() {
+    public void onStart()
+    {
         super.onStart();
-
-
-
-
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -34,6 +34,7 @@ public class UserActivity extends AppCompatActivity
     String uID;
 
     EditText userfname, useremail, userphone, useruname;
+    EditText PUTA;
 
 
     @Override
@@ -67,6 +68,12 @@ public class UserActivity extends AppCompatActivity
         useremail = findViewById(R.id.getemail);
         userphone = findViewById(R.id.getphone);
         useruname = findViewById(R.id.getusername);
+
+
+
+
+
+
 
     }
 

@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,7 +31,7 @@ public class DashboardFragment extends Fragment
 
     FirebaseAuth mAuth;
     FirebaseDatabase mDatabase;
-    DatabaseReference mRef;
+    DatabaseReference mRef, aR;
     String uid;
 
 
@@ -44,6 +43,9 @@ public class DashboardFragment extends Fragment
 
         getq = view.findViewById(R.id.getQuote);
         getAuthor = view.findViewById(R.id.getAuthor);
+
+
+
         qcategory = view.findViewById(R.id.postCategory);
         postq = view.findViewById(R.id.postQuote);
 
@@ -57,6 +59,10 @@ public class DashboardFragment extends Fragment
 
                 mDatabase = FirebaseDatabase.getInstance();
                 mRef = mDatabase.getReference("Quotes/");
+
+
+
+
 
                 final String quote = getq.getText().toString();
                 final String qc = qcategory.getSelectedItem().toString();
@@ -81,6 +87,9 @@ public class DashboardFragment extends Fragment
                     Toast.makeText(getContext(),"Choose any category",Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+
+
 
                 HashMap <String,String> datamap = new HashMap<String, String>();
                 datamap.put("quote",quote);
