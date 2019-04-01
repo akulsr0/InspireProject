@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // Created by Akul Srivastava
@@ -59,6 +60,12 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteViewHol
     @Override
     public int getItemCount() {
         return quoteList.size();
+    }
+
+    public void filterList(ArrayList<Quote> filteredList)
+    {
+        quoteList = filteredList;
+        notifyDataSetChanged();
     }
 
 

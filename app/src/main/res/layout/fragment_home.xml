@@ -14,7 +14,6 @@
         android:id="@+id/relLayhomeact"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
         >
 
         <ImageView
@@ -24,6 +23,25 @@
             android:src="@drawable/hometext"
             android:layout_marginLeft="20dp"
             />
+
+        <EditText
+            android:id="@+id/searchbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/searchedt"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:hint="Search"
+            android:drawableRight="@drawable/searchico"
+            android:paddingEnd="10dp"
+            android:cursorVisible="false"
+            android:singleLine="true"
+            />
+
+
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/myRecycler"

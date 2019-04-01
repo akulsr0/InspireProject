@@ -263,7 +263,9 @@ public class ProfileFragment extends Fragment {
         });
 
 
-        if(firebaseAuth.getCurrentUser().getUid().equals("MV7yPGTwTcRMV6d2wcjJjMJUL3h2"))
+        if(firebaseAuth.getCurrentUser().getUid().equals("MV7yPGTwTcRMV6d2wcjJjMJUL3h2")
+        || firebaseAuth.getCurrentUser().getUid().equals("bp0FQJZtG7PXnGRZjd9WqzH9twA3")
+        )
         {
             isVerify.setVisibility(View.VISIBLE);
         }

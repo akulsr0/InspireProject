@@ -7,9 +7,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 // Created by Akul Srivastava
@@ -41,7 +45,7 @@ public class HomeFragment extends Fragment {
 
     private SkidRightLayoutManager mSkidRightLayoutManager;
 
-
+    EditText search;
 
     DatabaseReference mDatabase;
 
@@ -54,6 +58,25 @@ public class HomeFragment extends Fragment {
         mDatabase = FirebaseDatabase.getInstance().getReference("Quotes");
         mDatabase.keepSynced(true);
 
+        search = view.findViewById(R.id.searchbar);
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                filterRV(s.toString());
+
+            }
+        });
 
         mSkidRightLayoutManager = new SkidRightLayoutManager(1.5f, 0.85f);
 
@@ -92,9 +115,28 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    private void filterRV(String text)
+    {
+        ArrayList<Quote> filteredList = new ArrayList<>();
+        for(Quote i: quoteList)
+        {
+            if(i.getQuote().toLowerCase().contains(text.toLowerCase()) ||
+            i.getQauthor().toLowerCase().contains(text.toLowerCase())
+            )
+            {
+                filteredList.add(i);
+            }
+        }
+        adapter.filterList(filteredList);
+    }
+
     @Override
     public void onStart()
     {
+
+
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
         super.onStart();
     }
 
